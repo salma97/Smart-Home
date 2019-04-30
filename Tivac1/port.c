@@ -65,6 +65,7 @@ void Port_Init (uint8_t port_index)
 		}		
 	}
 }
+
 void Port_SetPinPullUp (uint8_t port_index, uint8_t pins_mask, uint8_t enable)
 {
 switch(port_index)
