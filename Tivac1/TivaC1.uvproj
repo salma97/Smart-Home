@@ -45,7 +45,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\</OutputDirectory>
-          <OutputName>SmartHome</OutputName>
+          <OutputName>TivaC1</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
@@ -411,24 +411,14 @@
               <FilePath>.\startup_TM4C123.s</FilePath>
             </File>
             <File>
-              <FileName>motor.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\motor.c</FilePath>
-            </File>
-            <File>
               <FileName>temperature_sensor.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\temperature_sensor.c</FilePath>
             </File>
             <File>
-              <FileName>push_buttons.c</FileName>
+              <FileName>motor.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\push_buttons.c</FilePath>
-            </File>
-            <File>
-              <FileName>potentiometer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\potentiometer.c</FilePath>
+              <FilePath>.\motor.c</FilePath>
             </File>
             <File>
               <FileName>led.c</FileName>
@@ -436,24 +426,24 @@
               <FilePath>.\led.c</FilePath>
             </File>
             <File>
-              <FileName>lcd.c</FileName>
+              <FileName>uart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\lcd.c</FilePath>
+              <FilePath>.\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\port.c</FilePath>
+            </File>
+            <File>
+              <FileName>dio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\dio.c</FilePath>
             </File>
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
-            </File>
-            <File>
-              <FileName>UART.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\UART.c</FilePath>
-            </File>
-            <File>
-              <FileName>Application.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Application.c</FilePath>
             </File>
           </Files>
         </Group>
