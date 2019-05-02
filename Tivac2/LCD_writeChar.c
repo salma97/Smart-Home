@@ -1,4 +1,4 @@
-#include "lcd.h"
+#include "lcd.c"
  
  void LCD_WriteChar (uint8 LCD_DATA)
 {
