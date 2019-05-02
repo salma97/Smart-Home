@@ -29,6 +29,9 @@ void LCD_DisplayString (const uint8_t *str);
 void LCD_IntegerToString ( uint16_t data, char* str); 
 // This function is used to Initialize the LCD 
 void LCD_Init (void);
+//this function is used to diplay the number as a string on the LCD
+void LCD_DisplayString(const uint8_t *str);
+
 
 
 #endif
