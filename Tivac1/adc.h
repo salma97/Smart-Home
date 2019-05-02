@@ -4,6 +4,7 @@
 #include "port.h"
 #include "DIO.h"
 #include "tm4c123gh6pm.h"
+#include "std_types.h"
 
 
 #define trigger_select 0x0F
@@ -15,4 +16,7 @@
 
 void ADC0_SS3_Init (void);
 uint16_t ADC0_SS3_readValue(void);
+
+
+
 #endif

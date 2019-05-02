@@ -2,7 +2,7 @@
 
 void LED_Init (void)
 {
-	int delay;
+	uint8_t delay;
 	SYSCTL_RCGCPWM_R |= SYSCTL_RCGCPWM_R1;
 	delay = SYSCTL_RCGCPWM_R1;
 	SYSCTL_RCGCGPIO_R |= (0x20); //PF
@@ -22,5 +22,11 @@ void LED_Init (void)
 	GPIO_PORTF_DIR_R |= 0x04;
 	
 	PWM1_ENABLE_R |= 0x00000040;
+	
+}
+
+
+void LED_Intensity (uint8_t value)
+{
 	
 }
