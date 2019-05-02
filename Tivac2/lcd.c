@@ -27,7 +27,8 @@ void LCD_IntegerToString ( uint16_t data, char* str)
     end = i -1; 
 		
     while (start < end) 
-    { temp = *(str+start);
+    { 
+			temp = *(str+start);
 			*(str+start) = *(str+end);
 			*(str+end) = temp;
 			
@@ -35,3 +36,18 @@ void LCD_IntegerToString ( uint16_t data, char* str)
       end--; 
     }
 } 
+
+void LCD_Init (void)
+{
+	//initiallizing data port and control port and setting their pins as output
+	Port_Init(LCD_CTRL_PORT);
+	Port_Init(LCD_DATA_PORT);
+	Port_SetPinDirection(LCD_CTRL_PORT,RS,PORT_PIN_OUT);
+	Port_SetPinDirection(LCD_CTRL_PORT,RW,PORT_PIN_OUT);
+	Port_SetPinDirection(LCD_CTRL_PORT,E,PORT_PIN_OUT);
+	Port_SetPinDirection(LCD_DATA_PORT,0xFF,PORT_PIN_OUT);
+	//setting lcd to operate in two lines eight bits mode
+	LCD_SendCommand(TwoLineEightBitMode);
+	LCD_SendCommand(Cursor_Off);
+	LCD_SendCommand(Clear_Command);
+}
