@@ -4,8 +4,8 @@
 #define LCD_H_
 
 #include "std_types.h"
-#include "port_driver.h"
-#include "dio_driver.h"
+#include "port.h"
+#include "dio.h"
 
 #define TWO_LINE_LCD_Eight_BIT_MODE      0x38
 #define CURSOR_OFF 						 0x0C

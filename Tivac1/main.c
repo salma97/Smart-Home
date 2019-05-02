@@ -1,7 +1,7 @@
 #include "adc.h"
 #include "uart.h"
 #include "led.h"
-#include "motot.h"
+#include "motor.h"
 #include "temperature_sensor.h"
 
 ADC0SS3_Handler
