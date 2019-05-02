@@ -10,3 +10,9 @@ void ADC0_SS3_Init (void)
 	ADC0_SSCTL3_R |= ( (ADC0_SSCTL3_TS0<<3) | (ADC0_SSCTL3_IE0<<2) | (ADC0_SSCTL3_END0<<1));  //configuring sample sequncer 3 control port
 	ADC0_ACTSS_R |= (1<<SS_num);				//enable sample sequncer during configuration
 }
+
+uint16_t ADC0_SS3_readValue(void)
+{
+	uint16_t ADCValue= ADC0_SSFIFO3_R&0x0FFF;
+	return ADCValue;
+}
