@@ -16,6 +16,16 @@ void SystemInit()
 {
 }
 
+void Delay(int i){
+	unsigned long volatile time;
+  time = 145448;  // 0.1sec
+  for(int j=0; j<i; j++){
+		while(time){
+			time--;
+		}
+  }
+}
+
 int main (void)
 {
 	return 0;
