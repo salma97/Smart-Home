@@ -2,6 +2,10 @@
 #include "tm4c123gh6pm.h"
 #include "std_types.h"
 
+void systick_init(void){
+	
+}
+
 void systick_wait1ms(void){
 	NVIC_ST_RELOAD_R = 16000 - 1;
 	NVIC_ST_CURRENT_R = 0;
