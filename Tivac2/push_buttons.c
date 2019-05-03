@@ -1,4 +1,5 @@
 #include "lcd.h"
+#include "push_buttons.h"
 void pushButtons_Init (void)
 {
 	void Port_Init (PF);
@@ -9,4 +10,16 @@ void pushButtons_Init (void)
 
 	
 }
+void pushButtons_ISR(void)
+{
+	if ((GPIO_PORTF_DATA_R & PF0) == PF0)
+	{
+		PORT_InterruptAck(PF0);
+		UART0_Write(PF0);
+	}
+	else if((GPIO_PORTF_DATA_R & PF4) ==PF4 )
+	{
+		PORT_InterruptAck(PF4);
+		UART0_Write(PF4);
+	}
 #endif

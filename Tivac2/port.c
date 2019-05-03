@@ -149,5 +149,8 @@ void Port_SetPinDirection (uint8_t port_index, uint8_t pins_mask, Port_PinDirect
 			break;
 	}
 }
-
+void PORT_InterruptAck(uint8_t pins_mask)
+{
+	GPIO_PORTF_ICR_R |= pins_mask;
+}
 	
