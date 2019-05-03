@@ -152,3 +152,84 @@ void Port_SetPinDirection (uint8_t port_index, uint8_t pins_mask, Port_PinDirect
 }
 
 	
+void Port_AnalogOrDigital (uint8_t port_index, uint8_t pins_mask, AnalogOrDigital pins_type){
+	switch (port_index)
+	{
+		case PA:
+			if(pins_type == Analog){
+				GPIO_PORTA_AMSEL_R |= (pins_mask);
+				GPIO_PORTA_DEN_R &= ~(pins_mask);
+			}
+
+			else if (pins_type == Digital){
+				GPIO_PORTA_AMSEL_R &= ~(pins_mask);
+				GPIO_PORTA_DEN_R |= (pins_mask);
+			}
+
+			break;
+		case PB:
+			if(pins_type == Analog){
+				GPIO_PORTB_AMSEL_R |= (pins_mask);
+				GPIO_PORTB_DEN_R &= ~(pins_mask);
+			}
+
+			else if (pins_type == Digital){
+				GPIO_PORTB_AMSEL_R &= ~(pins_mask);
+				GPIO_PORTB_DEN_R |= (pins_mask);
+			}
+			
+			break;
+		case PC:
+			if(pins_type == Analog){
+				GPIO_PORTC_AMSEL_R |= (pins_mask);
+				GPIO_PORTC_DEN_R &= ~(pins_mask);
+			}
+
+			else if (pins_type == Digital){
+				GPIO_PORTC_AMSEL_R &= ~(pins_mask);
+				GPIO_PORTC_DEN_R |= (pins_mask);
+			}
+
+			break;
+		case PD:
+			if(pins_type == Analog){
+				GPIO_PORTD_AMSEL_R |= (pins_mask);
+				GPIO_PORTD_DEN_R &= ~(pins_mask);
+			}
+
+			else if (pins_type == Digital){
+				GPIO_PORTD_AMSEL_R &= ~(pins_mask);
+				GPIO_PORTD_DEN_R |= (pins_mask);
+			}
+
+			break;
+		case PE:
+			if(pins_type == Analog){
+				GPIO_PORTE_AMSEL_R |= (pins_mask);
+				GPIO_PORTE_DEN_R &= ~(pins_mask);
+			}
+
+			else if (pins_type == Digital){
+				GPIO_PORTE_AMSEL_R &= ~(pins_mask);
+				GPIO_PORTE_DEN_R |= (pins_mask);
+			}
+
+			break;
+		case PF:
+			if(pins_type == Analog){
+				GPIO_PORTF_AMSEL_R |= (pins_mask);
+				GPIO_PORTF_DEN_R &= ~(pins_mask);
+			}
+
+			else if (pins_type == Digital){
+				GPIO_PORTF_AMSEL_R &= ~(pins_mask);
+				GPIO_PORTF_DEN_R |= (pins_mask);
+			}
+
+			break;
+	}
+}
+
+/*void Port_AlternateFunction (uint8_t port_index, uint8_t pins_mask, uint8_t enable, uint32_t pctl_mask){
+	
+}*/

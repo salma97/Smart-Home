@@ -16,3 +16,10 @@ void UART0_Init(void)
 	GPIO_PORTA_AMSEL_R &= ~0x003;
 	
 }
+
+uint8_t UART0_Read (void)
+{
+ while((UART0_FR_R&0x0010)!=0);
+ return(UART0_DR_R&0xFF);
+
+}

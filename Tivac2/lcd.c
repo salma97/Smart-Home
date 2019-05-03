@@ -1,41 +1,41 @@
 #include "lcd.h"
 
-void LCD_IntegerToString ( uint16_t data, char* str) 
+void LCD_IntegerToString ( uint16_t data, char* str)
 { 	uint8_t temp;
 	uint8_t start;
     uint8_t end;
-    int i = 0;  
-  
+    int i = 0;
+
     /* Handle 0 explicitely, otherwise empty string is printed for 0 */
-    if (data == 0) 
-    { 
-        str[i++] = '0'; 
-        str[i] = '\0'; 
-    } 
-  
-    // Process individual digits 
-    while (data != 0) 
-    { 
-        uint16_t rem = data % 10; 
-        str[i++] = (rem > 9)? (rem-10) + 'a' : rem + '0'; 
-        data = data/10; 
-    } 
-    str[i] = '\0'; // Append string terminator 
-  
-    // Reverse the string 
-		start = 0; 
-    end = i -1; 
-		
-    while (start < end) 
-    { 
+    if (data == 0)
+    {
+        str[i++] = '0';
+        str[i] = '\0';
+    }
+
+    // Process individual digits
+    while (data != 0)
+    {
+        uint16_t rem = data % 10;
+        str[i++] = (rem > 9)? (rem-10) + 'a' : rem + '0';
+        data = data/10;
+    }
+    str[i] = '\0'; // Append string terminator
+
+    // Reverse the string
+		start = 0;
+    end = i -1;
+
+    while (start < end)
+    {
 			temp = *(str+start);
 			*(str+start) = *(str+end);
 			*(str+end) = temp;
-			
-		    start++; 
-      end--; 
+
+		    start++;
+      end--;
     }
-} 
+}
 
 void LCD_Init (void)
 {
@@ -59,4 +59,23 @@ void LCD_DisplayString(const uint8_t *str)
 	{
 		LCD_SendData(str[i]);
 	}
+}
+void msdelay(uint32_t y)
+ {
+	 unsigned long volatile t;
+	 t= 1000*y;
+ 	 while(t){t--;}
+ }
+void LCD_sendCommand(uint8_t command){
+
+					DIO_WritePort(PORTA,RS,STD_LOW);
+					DIO_WritePort(PORTA,RW,STD_LOW);
+	 				msdelay(1);
+					DIO_WritePort(PORTA,E,STD_HIGH);
+					msdelay(1);
+	                DIO_SetValuePort(PORTB,command);
+	                msdelay(1);
+                	DIO_WritePort(PORTA,E,STD_LOW);
+					msdelay(1);
+
 }
