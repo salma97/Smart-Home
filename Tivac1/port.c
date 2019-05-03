@@ -10,12 +10,14 @@ void Port_Init (uint8_t port_index)
 		case PA:
 		{
 			GPIO_PORTA_LOCK_R = 0x4C4F434B;
+			GPIO_PORTA_CR_R = 0xFFFFFFFF;
 			break;
 		}
 
 		case PB:
 		{
 			GPIO_PORTB_LOCK_R = 0x4C4F434B;
+			GPIO_PORTB_CR_R = 0xFFFFFFFF;
 			break;
 		}
 
@@ -24,18 +26,21 @@ void Port_Init (uint8_t port_index)
 		case PD:
 		{
 			GPIO_PORTD_LOCK_R = 0x4C4F434B;
+			GPIO_PORTD_CR_R = 0xFFFFFFFF;
 			break;
 		}
 		
 		case PE:
 		{
 			GPIO_PORTE_LOCK_R = 0x4C4F434B;
+			GPIO_PORTE_CR_R = 0xFFFFFFFF;
 			break;
 		}
 		
 		case PF:
 		{
 			GPIO_PORTF_LOCK_R = 0x4C4F434B;
+			GPIO_PORTF_CR_R = 0xFFFFFFFF;
 			break;
 		}		
 	}
