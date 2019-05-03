@@ -8,7 +8,7 @@
 
 uint8_t UART0_Read (void);
 
-
+void UART0_Write(uint8_t data);
 
 
 #endif
