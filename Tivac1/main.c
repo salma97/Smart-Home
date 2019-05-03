@@ -16,6 +16,16 @@ void SystemInit()
 {
 }
 
+void Delay(uint16_t i){
+	uint16_t time;
+  time = 145448;  // 0.1sec
+  for(uint16_t j=0; j<i; j++){
+		while(time){
+			time--;
+		}
+  }
+}
+
 int main (void)
 {
 	return 0;

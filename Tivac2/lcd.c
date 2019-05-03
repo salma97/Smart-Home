@@ -51,3 +51,12 @@ void LCD_Init (void)
 	LCD_SendCommand(Cursor_Off);
 	LCD_SendCommand(Clear_Command);
 }
+void LCD_DisplayString(const uint8_t *str)
+{
+	int i;
+	LCD_SendCommand(Cursor_Location);
+	for (i = 0; str[i] != 0; i++)
+	{
+		LCD_SendData(str[i]);
+	}
+}
