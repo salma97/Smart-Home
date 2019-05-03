@@ -15,6 +15,4 @@
 
 
 void ADC0_SS3_Init (void);
-void ADC_Init_Potentiometer (void);
-
 #endif

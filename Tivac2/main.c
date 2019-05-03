@@ -11,7 +11,13 @@ ADC0SS3_Handler
 	UART_Write(duty_cycle);
 	ADC0_InterruptAck(3);
 }
-
+UART0_Handler(void)
+{
+UART0_ICR_R |= 0x10;
+uint16_t x = UART0_Read;
+LCD_SendCommand(Clear_Command);
+LCD_IntegerToString(x);
+}
 void SystemInit()
 {
 }

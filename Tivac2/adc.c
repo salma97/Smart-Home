@@ -15,12 +15,3 @@ void ADC0_SS3_Init (void)
 	}
 	ADC0_ACTSS_R |= (1<<SS_num);				//enable sample sequncer during configuration
 }
-void ADC_Init_Potentiometer (void)
-{
-ADC0_SS3_Init ();
-Port_AnalogOrDigital (PORTE, 0X08, 0);
-//Port_AlternateFunction (PORTE,0X08,1, uint32_t pctl_mask);
-GPIO_PORTE_AFSEL_R|=0x08;
-
-
-}
