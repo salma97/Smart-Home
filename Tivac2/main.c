@@ -14,7 +14,7 @@ ADC0SS3_Handler
 UART0_Handler(void)
 {
 UART0_ICR_R |= 0x10;
-uint16_t x = UART0_DR_R & 0xFF;
+uint16_t x = UART0_Read;
 LCD_SendCommand(Clear_Command);
 LCD_IntegerToString(x);
 }
