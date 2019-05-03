@@ -15,4 +15,8 @@
 
 
 void ADC0_SS3_Init (void);
+
+uint16_t ADC0_SS3_readValue(void);
+void ADC0_InterruptAck(uint8_t SS_Num);
+
 #endif

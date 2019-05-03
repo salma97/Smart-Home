@@ -22,3 +22,8 @@ uint16_t ADC0_SS3_readValue(void)
 	uint16_t ADCValue= ADC0_SSFIFO3_R&0x0FFF;
 	return ADCValue;
 }
+
+void ADC0_InterruptAck(uint8_t SS_Num)
+{
+	
+}

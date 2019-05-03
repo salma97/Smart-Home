@@ -2,9 +2,9 @@
 
 void PWM1_3_Init (uint16_t Load, uint16_t Compare, uint32_t RCC, uint32_t GENA, uint32_t PWMnEnable)
 {
-	uint8_t delay;
+	uint32_t delay;
 	SYSCTL_RCGCPWM_R |= SYSCTL_RCGCPWM_R1;
-	delay = SYSCTL_RCGCPWM_R1;
+	delay = SYSCTL_RCGCPWM_R1 & 0xFF00FF00 ;
 
 	SYSCTL_RCC_R |= RCC; 
 
