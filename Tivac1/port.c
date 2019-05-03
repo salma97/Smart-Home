@@ -119,39 +119,39 @@ void Port_SetPinDirection (uint8_t port_index, uint8_t pins_mask, Port_PinDirect
 	{
 		case PA:
 				if(pins_direction == PORT_PIN_OUT)
-											GPIO_PORTA_DIR_R |= (pins_mask);
+					GPIO_PORTA_DIR_R |= (pins_mask);
 				else if (pins_direction == PORT_PIN_IN)
-											GPIO_PORTA_DIR_R &= ~(pins_mask);
+					GPIO_PORTA_DIR_R &= ~(pins_mask);
 			break;
 		case PB:
 				if(pins_direction == PORT_PIN_OUT)
-											GPIO_PORTB_DIR_R |= (pins_mask);
+					GPIO_PORTB_DIR_R |= (pins_mask);
 				else if (pins_direction == PORT_PIN_IN)
-											GPIO_PORTB_DIR_R &= ~(pins_mask);
+					GPIO_PORTB_DIR_R &= ~(pins_mask);
 			break;
 		case PC:
 				if(pins_direction == PORT_PIN_OUT)
-											GPIO_PORTC_DIR_R |= (pins_mask);
+					GPIO_PORTC_DIR_R |= (pins_mask);
 				else if (pins_direction == PORT_PIN_IN)
-											GPIO_PORTC_DIR_R &= ~(pins_mask);
+					GPIO_PORTC_DIR_R &= ~(pins_mask);
 			break;
 		case PD:
 				if(pins_direction == PORT_PIN_OUT)
-											GPIO_PORTD_DIR_R |= (pins_mask);
+					GPIO_PORTD_DIR_R |= (pins_mask);
 				else if (pins_direction == PORT_PIN_IN)
-											GPIO_PORTD_DIR_R &= ~(pins_mask);
+					GPIO_PORTD_DIR_R &= ~(pins_mask);
 			break;
 		case PE:
 				if(pins_direction == PORT_PIN_OUT)
-											GPIO_PORTE_DIR_R |= (pins_mask);
+					GPIO_PORTE_DIR_R |= (pins_mask);
 				else if (pins_direction == PORT_PIN_IN)
-											GPIO_PORTE_DIR_R &= ~(pins_mask);
+					GPIO_PORTE_DIR_R &= ~(pins_mask);
 			break;
 		case PF:
 				if(pins_direction == PORT_PIN_OUT)
-											GPIO_PORTF_DIR_R |= (pins_mask);
+					GPIO_PORTF_DIR_R |= (pins_mask);
 				else if (pins_direction == PORT_PIN_IN)
-											GPIO_PORTF_DIR_R &= ~(pins_mask);
+					GPIO_PORTF_DIR_R &= ~(pins_mask);
 			break;
 	}
 }
@@ -235,6 +235,83 @@ void Port_AnalogOrDigital (uint8_t port_index, uint8_t pins_mask, AnalogOrDigita
 	}
 }
 
-/*void Port_AlternateFunction (uint8_t port_index, uint8_t pins_mask, uint8_t enable, uint32_t pctl_mask){
-	
-}*/
+void Port_AlternateFunction (uint8_t port_index, uint8_t pins_mask, uint8_t enable, uint32_t pctl_mask)
+{
+	int i;
+	for (i =0 ; i<8 ;i++)
+	{
+		if(pins_mask&(1<<i))
+		{
+			break;
+		}
+	}
+	switch (port_index)
+	{
+		case PA:
+			if (enable)
+			{
+				GPIO_PORTA_AFSEL_R |= pins_mask;
+				GPIO_PORTA_PCTL_R = (GPIO_PORTA_PCTL_R &~(0xF<<i*4)) | (pctl_mask & (0xF<<i*4));
+			}
+			else
+			{
+				GPIO_PORTA_AFSEL_R &= ~pins_mask;
+			}
+			break;
+		case PB:
+			if (enable)
+			{
+				GPIO_PORTB_AFSEL_R |= pins_mask;
+				GPIO_PORTB_PCTL_R = (GPIO_PORTB_PCTL_R &~(0xF<<i*4)) | (pctl_mask & (0xF<<i*4));
+			}
+			else
+			{
+				GPIO_PORTB_AFSEL_R &= ~pins_mask;
+			}
+			break;
+		case PC:
+			if (enable)
+			{
+				GPIO_PORTC_AFSEL_R |= pins_mask;
+				GPIO_PORTC_PCTL_R = (GPIO_PORTC_PCTL_R &~(0xF<<i*4)) | (pctl_mask & (0xF<<i*4));
+			}
+			else
+			{
+				GPIO_PORTC_AFSEL_R &= ~pins_mask;
+			}
+			break;
+		case PD:
+			if (enable)
+			{
+				GPIO_PORTD_AFSEL_R |= pins_mask;
+				GPIO_PORTD_PCTL_R = (GPIO_PORTD_PCTL_R &~(0xF<<i*4)) | (pctl_mask & (0xF<<i*4));
+			}
+			else
+			{
+				GPIO_PORTD_AFSEL_R &= ~pins_mask;
+			}
+			break;
+		case PE:
+			if (enable)
+			{
+				GPIO_PORTE_AFSEL_R |= pins_mask;
+				GPIO_PORTE_PCTL_R = (GPIO_PORTE_PCTL_R &~(0xF<<i*4)) | (pctl_mask & (0xF<<i*4));
+			}
+			else
+			{
+				GPIO_PORTE_AFSEL_R &= ~pins_mask;
+			}
+			break;
+		case PF:
+			if (enable)
+			{
+				GPIO_PORTF_AFSEL_R |= pins_mask;
+				GPIO_PORTF_PCTL_R = (GPIO_PORTF_PCTL_R &~(0xF<<i*4)) | (pctl_mask & (0xF<<i*4));
+			}
+			else
+			{
+				GPIO_PORTF_AFSEL_R &= ~pins_mask;
+			}
+			break;
+	}
+}
