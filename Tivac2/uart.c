@@ -4,18 +4,19 @@
 
 void UART0_Init(void)
 {
-	DIO_WritePort(SYSCTL_RCGCUART_R, SYS_UART_EN, STD_HIGH);//Enable uart clk
-	DIO_WritePort(SYSCTL_RCGCGPIO_R, SYS_PORT_EN, STD_HIGH);//enable port clk
-	DIO_WritePort(UART0_CTL_R, UART_CTL_M, STD_LOW); //UART disabled
+	SYSCTL_RCGCUART_R|= 0x0001;//Enable uart clk
+	SYSCTL_RCGCGPIO_R|= 0x0001;//enable port clk
+	UART0_CTL_R&=~0x0001; //UART disabled
 	UART0_IBRD_R = intBRD;
 	UART0_FBRD_R = fBRD;
-	DIO_WritePort(UART0_LCRH_R, UART_CTLINE_M, STD_HIGH);//8 bits word, even parity bit and 1 stop bit enabled
-	DIO_WritePort(UART0_CTL_R, UART_CTL_M_EN, STD_HIGH); //enable TX, RX and UART
-	DIO_WritePort(GPIO_PORTA_AFSEL_R, GPIO_MASK, STD_HIGH);
-	DIO_WritePort(GPIO_PORTA_DEN_R, GPIO_MASK, STD_HIGH);
-	DIO_WritePort(GPIO_PORTA_AMSEL_R, GPIO_MASK, STD_LOW);
-
+	UART0_LCRH_R |= 0x0076;//8 bits word, even parity bit and 1 stop bit enabled
+	UART0_CTL_R|= 0x0070; //enable TX, RX and UART
+	GPIO_PORTA_AFSEL_R|= 0x003;
+	GPIO_PORTA_DEN_R |= 0x003;
+	GPIO_PORTA_AMSEL_R &= ~0x003;
+	
 }
+
 uint8_t UART0_Read (void)
 {
  while((UART0_FR_R&0x0010)!=0);

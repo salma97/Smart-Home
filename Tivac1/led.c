@@ -14,5 +14,5 @@ void LED_Init (void)
 
 void LED_Intensity (uint8_t value)
 {
-	
+	PWM1_3_CMPA_R= value;
 }
