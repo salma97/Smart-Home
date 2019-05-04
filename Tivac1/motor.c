@@ -19,3 +19,12 @@ void Motor_AntiClockwise (void)
    delay(10);
   }
 }
+
+void Motor_Init(void){
+	Port_PinDirectionType direction = PORT_PIN_OUT;
+	AnalogOrDigital type = Digital;
+	Port_Init(PB);
+	Port_SetPinDirection(PB, 0x1111, direction);
+	Port_AnalogOrDigital (PB, 0x1111, type);
+	cnt = 1;
+}
