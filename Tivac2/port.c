@@ -315,3 +315,8 @@ void Port_AlternateFunction (uint8_t port_index, uint8_t pins_mask, uint8_t enab
 			break;
 	}
 }
+
+void PORT_InterruptAck(uint8_t pins_mask)
+{
+	GPIO_PORTF_ICR_R |= pins_mask;
+}
