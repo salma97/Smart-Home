@@ -15,8 +15,7 @@ void pushButtons_Init (void)
 		NVIC_PRI7_R = (NVIC_PRI7_R & 0xFF00FFFF) | (GPIO_PF4_0_PRI << 21); // PRI7 bits 23:21
 		NVIC_EN0_R |= (1 << 30); // EN0 bit 30
 	}
-	
-}
+
 void pushButtons_ISR(void)
 {
 	if ((GPIO_PORTF_DATA_R & PF0) == PF0)
