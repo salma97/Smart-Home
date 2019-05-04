@@ -17,7 +17,8 @@ void systick_wait1ms(void){
 }
 
 void delay(uint16_t i){
-	for(uint16_t j=0; j<i; j++){
+	uint16_t j;
+	for(j=0; j<i; j++){
 		systick_wait1ms();
 	}
 }

@@ -1,5 +1,5 @@
 #include "motor.h"
-
+#include "systick.h"
 
 const uint8_t steps[ ] = {0x9, 0x3, 0x6, 0xC};
 int cnt =8;

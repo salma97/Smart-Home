@@ -2,11 +2,11 @@
 #include "push_buttons.h"
 void pushButtons_Init (void)
 {
-	void Port_Init (PF);
-	void Port_SetPinDirection (PF, 0x11, PORT_PIN_IN);
-	void Port_AnalogOrDigital (PF,0x11, 1);
-	void Port_AlternateFunction (PF, 0x11, 0, 0x00);
-	void Port_SetPinPullUp (PF, 0x11, 1);
+	Port_Init (PF);
+	Port_SetPinDirection (PF, 0x11, PORT_PIN_IN);
+	Port_AnalogOrDigital (PF,0x11, Digital);
+	Port_AlternateFunction (PF, 0x11, 0, 0x00);
+	Port_SetPinPullUp (PF, 0x11, 1);
 
 	
 }
@@ -22,4 +22,4 @@ void pushButtons_ISR(void)
 		PORT_InterruptAck(PF4);
 		UART0_Write(PF4);
 	}
-#endif
+}

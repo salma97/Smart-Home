@@ -1,6 +1,6 @@
 #include "lcd.h"
 
-void LCD_IntegerToString ( uint16_t data, char* str)
+void LCD_IntegerToString ( uint16_t data, uint8_t* str)
 { 	uint8_t temp;
 	uint8_t start;
     uint8_t end;
@@ -68,14 +68,14 @@ void msdelay(uint32_t y)
  }
 void LCD_sendCommand(uint8_t command){
 
-					DIO_WritePort(PORTA,RS,STD_LOW);
-					DIO_WritePort(PORTA,RW,STD_LOW);
+					DIO_WritePort(LCD_CTRL_PORT,RS,STD_LOW);
+					DIO_WritePort(LCD_CTRL_PORT,RW,STD_LOW);
 	 				msdelay(1);
-					DIO_WritePort(PORTA,E,STD_HIGH);
+					DIO_WritePort(LCD_CTRL_PORT,E,STD_HIGH);
 					msdelay(1);
-	                DIO_SetValuePort(PORTB,command);
-	                msdelay(1);
-                	DIO_WritePort(PORTA,E,STD_LOW);
+	        DIO_Write8Bits(LCD_DATA_PORT,command);
+	        msdelay(1);
+          DIO_WritePort(LCD_CTRL_PORT,E,STD_LOW);
 					msdelay(1);
 
 }

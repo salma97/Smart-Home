@@ -455,6 +455,11 @@
               <FileType>1</FileType>
               <FilePath>.\pwm.c</FilePath>
             </File>
+            <File>
+              <FileName>systick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\systick.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

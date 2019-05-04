@@ -26,7 +26,7 @@ void LCD_SendData (uint8_t data);
 void LCD_DisplayString (const uint8_t *str);
 // This function is used to convert integers to strings (we'll use to convert numbers from 0-->999 to strings;
 // because the LCD displays characters only (can translate ASCI codes of characters only)
-void LCD_IntegerToString ( uint16_t data, char* str); 
+void LCD_IntegerToString ( uint16_t data, uint8_t* str); 
 // This function is used to Initialize the LCD 
 void LCD_Init (void);
 //this function is used to diplay the number as a string on the LCD

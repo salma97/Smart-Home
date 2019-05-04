@@ -1,12 +1,13 @@
 #include "lcd.h"
+#include "push_buttons.h"
 
 void pushButtons_Init (void)
 {
-void Port_Init (PF);
-void Port_SetPinDirection (PF, PF_pins_mask, PORT_PIN_IN);
-void Port_AnalogOrDigital (PF,PF_pins_mask, 1);
-void Port_AlternateFunction (PF, PF_pins_mask, 0, PCTL_pins_mask);
-void Port_SetPinPullUp (PF, PF_pins_mask, 1);
+	Port_Init (PF);
+	Port_SetPinDirection (PF, PF_pins_mask, PORT_PIN_IN);
+	Port_AnalogOrDigital (PF,PF_pins_mask, Digital);
+	Port_AlternateFunction (PF, PF_pins_mask, 0, PCTL_pins_mask);
+	Port_SetPinPullUp (PF, PF_pins_mask, 1);
 	GPIO_PORTF_IS_R &= ~GPIO_PF4_0_M;
 	GPIO_PORTF_IBE_R &= ~GPIO_PF4_0_M;
 	GPIO_PORTF_IEV_R &= ~GPIO_PF4_0_M;
