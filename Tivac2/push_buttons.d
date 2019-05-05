@@ -1,0 +1,10 @@
+.\push_buttons.o: push_buttons.c
+.\push_buttons.o: lcd.h
+.\push_buttons.o: port.h
+.\push_buttons.o: tm4c123gh6pm.h
+.\push_buttons.o: std_types.h
+.\push_buttons.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\push_buttons.o: dio.h
+.\push_buttons.o: systick.h
+.\push_buttons.o: push_buttons.h
+.\push_buttons.o: uart.h

@@ -1,0 +1,76 @@
+Dependencies for Project 'TivaC1', Target 'Target 1': (DO NOT MODIFY !)
+F (.\startup_TM4C123.s)(0x5CC88160)(--cpu Cortex-M4.fp --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123--list .\startup_tm4c123.lst --xref -o .\startup_tm4c123.o --depend .\startup_tm4c123.d)
+F (.\temperature_sensor.c)(0x5CCD728A)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\temperature_sensor.o --omf_browse .\temperature_sensor.crf --depend .\temperature_sensor.d)
+I (temperature_sensor.h)(0x5CCDBAA6)
+I (port.h)(0x5CCB77E3)
+I (tm4c123gh6pm.h)(0x5CC88160)
+I (std_types.h)(0x5CC88160)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
+I (DIO.h)(0x5CC88160)
+I (adc.h)(0x5CCD09A2)
+F (.\motor.c)(0x5CCDBA67)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\motor.o --omf_browse .\motor.crf --depend .\motor.d)
+I (motor.h)(0x5CCD7AC0)
+I (port.h)(0x5CCB77E3)
+I (tm4c123gh6pm.h)(0x5CC88160)
+I (std_types.h)(0x5CC88160)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
+I (DIO.h)(0x5CC88160)
+I (systick.h)(0x5CCD728A)
+F (.\led.c)(0x5CCD09A2)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\led.o --omf_browse .\led.crf --depend .\led.d)
+I (led.h)(0x5CCB77E3)
+I (port.h)(0x5CCB77E3)
+I (tm4c123gh6pm.h)(0x5CC88160)
+I (std_types.h)(0x5CC88160)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
+I (pwm.h)(0x5CCD09A2)
+F (.\uart.c)(0x5CCDBA6A)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\uart.o --omf_browse .\uart.crf --depend .\uart.d)
+I (uart.h)(0x5CCDB992)
+I (port.h)(0x5CCB77E3)
+I (tm4c123gh6pm.h)(0x5CC88160)
+I (std_types.h)(0x5CC88160)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
+I (DIO.h)(0x5CC88160)
+I (LED.h)(0x5CCB77E3)
+I (pwm.h)(0x5CCD09A2)
+I (motor.h)(0x5CCD7AC0)
+F (.\port.c)(0x5CCD7BA3)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\port.o --omf_browse .\port.crf --depend .\port.d)
+I (port.h)(0x5CCB77E3)
+I (tm4c123gh6pm.h)(0x5CC88160)
+I (std_types.h)(0x5CC88160)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
+F (.\dio.c)(0x5CC88160)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\dio.o --omf_browse .\dio.crf --depend .\dio.d)
+I (dio.h)(0x5CC88160)
+I (tm4c123gh6pm.h)(0x5CC88160)
+I (std_types.h)(0x5CC88160)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
+F (.\main.c)(0x5CCDBC59)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\main.o --omf_browse .\main.crf --depend .\main.d)
+I (adc.h)(0x5CCD09A2)
+I (port.h)(0x5CCB77E3)
+I (tm4c123gh6pm.h)(0x5CC88160)
+I (std_types.h)(0x5CC88160)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
+I (DIO.h)(0x5CC88160)
+I (uart.h)(0x5CCDB992)
+I (led.h)(0x5CCB77E3)
+I (pwm.h)(0x5CCD09A2)
+I (motor.h)(0x5CCD7AC0)
+I (temperature_sensor.h)(0x5CCDBAA6)
+F (.\adc.c)(0x5CCDB8AA)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\adc.o --omf_browse .\adc.crf --depend .\adc.d)
+I (adc.h)(0x5CCD09A2)
+I (port.h)(0x5CCB77E3)
+I (tm4c123gh6pm.h)(0x5CC88160)
+I (std_types.h)(0x5CC88160)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
+I (DIO.h)(0x5CC88160)
+F (.\pwm.c)(0x5CCD7C11)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\pwm.o --omf_browse .\pwm.crf --depend .\pwm.d)
+I (pwm.h)(0x5CCD09A2)
+I (tm4c123gh6pm.h)(0x5CC88160)
+I (std_types.h)(0x5CC88160)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
+F (.\systick.c)(0x5CCD7289)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\TI\TM4C123-DTM4C123GH6PM-o .\systick.o --omf_browse .\systick.crf --depend .\systick.d)
+I (systick.h)(0x5CCD728A)
+I (port.h)(0x5CCB77E3)
+I (tm4c123gh6pm.h)(0x5CC88160)
+I (std_types.h)(0x5CC88160)
+I (C:\Keil\ARM\ARMCC\include\stdio.h)(0x51C819B4)
+I (DIO.h)(0x5CC88160)

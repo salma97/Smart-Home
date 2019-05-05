@@ -8,7 +8,7 @@
 
 void Motor_Clockwise (void);
 void Motor_AntiClockwise (void);
-
+void Motor_Init(void);
 
 
 #endif

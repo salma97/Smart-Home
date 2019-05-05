@@ -11,7 +11,7 @@
 #define SS_num 3
 #define ADC0_SSCTL3_IE0		0x1
 #define ADC0_SSCTL3_END0	0x1
-#define ADC0_SSCTL3_TS0   0x1
+#define ADC0_SSCTL3_TS0   0x0
 
 
 void ADC0_SS3_Init (void);

@@ -5,6 +5,6 @@
 #include "DIO.h"
 #include "adc.h"
 
-
+void TempSensor_Init (void);
 
 #endif

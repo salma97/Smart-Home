@@ -21,11 +21,11 @@ void pushButtons_ISR(void)
 	if ((GPIO_PORTF_DATA_R & PF0) == PF0)
 	{
 		PORT_InterruptAck(PF0);
-		UART0_Write(PF0);
+		UART2_Write(PF0);
 	}
 	else if((GPIO_PORTF_DATA_R & PF4) ==PF4 )
 	{
 		PORT_InterruptAck(PF4);
-		UART0_Write(PF4);
+		UART2_Write(PF4);
 	}
 }

@@ -2,7 +2,7 @@
 
 void Port_Init (uint8_t port_index)
 {
-	int delay;
+	 volatile int delay;
 	SYSCTL_RCGCGPIO_R |= (1 << port_index);
 	delay = SYSCTL_RCGCGPIO_R;
 	switch(port_index)

@@ -1,0 +1,12 @@
+.\main.o: main.c
+.\main.o: lcd.h
+.\main.o: port.h
+.\main.o: tm4c123gh6pm.h
+.\main.o: std_types.h
+.\main.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\main.o: dio.h
+.\main.o: systick.h
+.\main.o: potentiometer.h
+.\main.o: adc.h
+.\main.o: push_buttons.h
+.\main.o: uart.h
