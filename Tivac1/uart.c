@@ -21,15 +21,21 @@ void UART2_Handler (void)
 }
 
 void UART2_Init(void)
-{	volatile uint8_t delay;
+{	
+	volatile uint8_t delay;
 	SYSCTL_RCGCUART_R|= EnableUART;//Enable uart clk
+	delay = EnableUART;
 	SYSCTL_RCGCGPIO_R|= Enable_MASK;//enable port clk
-	delay = SYSCTL_RCGCGPIO_R;
+	delay = Enable_MASK;
+	
+	Port_Init(PD);
+	
 	UART2_CTL_R &= ~EnableUART; //UART disabled
 	UART2_IBRD_R = intBRD;
 	UART2_FBRD_R = fBRD;
 	UART2_LCRH_R |= CTRL_LINE_MASK;//8 bits word, even parity bit and 1 stop bit enabled
 	UART2_CTL_R|= UART_CTRL_MASK; //enable TX, RX and UART
+	
 	GPIO_PORTD_AFSEL_R|= GPIO_MASK;
 	GPIO_PORTD_DEN_R |= GPIO_MASK;
 	GPIO_PORTD_AMSEL_R &= ~ GPIO_MASK;
