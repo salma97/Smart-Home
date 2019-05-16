@@ -3,10 +3,11 @@
 .\main.o: port.h
 .\main.o: tm4c123gh6pm.h
 .\main.o: std_types.h
-.\main.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\main.o: E:\keil\ARM\ARMCC\bin\..\include\stdio.h
 .\main.o: DIO.h
 .\main.o: uart.h
 .\main.o: led.h
 .\main.o: pwm.h
 .\main.o: motor.h
 .\main.o: temperature_sensor.h
+.\main.o: systick.h

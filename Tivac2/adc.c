@@ -13,6 +13,7 @@ void ADC0_SS3_Init (void)
 	if(ADC0_SSCTL3_IE0	==	0x1)
 	{
 		ADC0_IM_R |= (1<<3);
+		NVIC_PRI4_R  |= 0x2000;
 		NVIC_EN0_R |= (1<<17);
 	}
 	ADC0_ACTSS_R |= (1<<SS_num);				//enable sample sequncer during configuration
@@ -26,4 +27,9 @@ uint16_t ADC0_SS3_readValue(void)
 void ADC0_InterruptAck(uint8_t SS_Num)
 {
 	ADC0_ISC_R |= (1<<SS_Num);
+}
+
+void ADC0_SS3_SC (void)
+{
+	ADC0_PSSI_R = 1<<3 ;
 }

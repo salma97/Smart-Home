@@ -10,10 +10,9 @@
 #define PF4 0x10
 
 void pushButtons_Init (void);
-void pushButtons_ISR(void);
 #define PF_pins_mask 0x11
 #define PCTL_pins_mask 0x00
 #define GPIO_PF4_0_M		0x11
-#define GPIO_PF4_0_PRI	2
+#define GPIO_PF4_0_PRI	0
 void pushButtons_Init (void);
 #endif

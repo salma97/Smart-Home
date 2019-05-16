@@ -3,7 +3,7 @@
 .\lcd.o: port.h
 .\lcd.o: tm4c123gh6pm.h
 .\lcd.o: std_types.h
-.\lcd.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\lcd.o: E:\keil\ARM\ARMCC\bin\..\include\stdio.h
 .\lcd.o: dio.h
 .\lcd.o: systick.h
-.\lcd.o: C:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+.\lcd.o: E:\keil\ARM\ARMCC\bin\..\include\stdlib.h

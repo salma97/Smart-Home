@@ -7,9 +7,9 @@
 #include "std_types.h"
 
 
-#define trigger_select 0x0F
+#define trigger_select 0x00
 #define SS_num 3
-#define ADC0_SSCTL3_IE0		0x1
+#define ADC0_SSCTL3_IE0		0x0
 #define ADC0_SSCTL3_END0	0x1
 #define ADC0_SSCTL3_TS0   0x1
 
@@ -17,6 +17,6 @@
 void ADC0_SS3_Init (void);
 uint16_t ADC0_SS3_readValue(void);
 void ADC0_InterruptAck(uint8_t SS_Num);
-
+void ADC0_SS3_SC (void);
 
 #endif

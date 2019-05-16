@@ -6,8 +6,8 @@
 #include "tm4c123gh6pm.h"
 #include "std_types.h"
 
-#define intBRD		0x00000000
-#define fBRD			0x00000000
+#define intBRD		104
+#define fBRD			5
 #define Enable_MASK 0x08
 #define EnableUART  0x04
 #define CTRL_LINE_MASK 0x0076
@@ -15,9 +15,10 @@
 #define GPIO_MASK 0xC0
 
 void UART2_Init(void);
-
+uint8_t UART2_Available(void);
 uint8_t UART2_Read(void);
 
 void UART2_Write(uint8_t data);
+
 
 #endif
