@@ -11,7 +11,7 @@
 #define Enable_MASK 0x08
 #define EnableUART  0x04
 #define CTRL_LINE_MASK 0x0076
-#define UART_CTRL_MASK 0x0070
+#define UART_CTRL_MASK 0x0060
 #define GPIO_MASK 0xC0
 
 void UART2_Init(void);

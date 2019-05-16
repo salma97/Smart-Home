@@ -6,5 +6,5 @@
 #include "adc.h"
 
 void TempSensor_Init (void);
-
+void Temp_StartReading(void);
 #endif

@@ -8,3 +8,10 @@ void TempSensor_Init (void)
 Port_AlternateFunction (PE,0x08,1, 0x00);
 	
 }
+
+void 		Temp_StartReading(void)
+{
+	ADC0_SS3_SC();
+}
+
+

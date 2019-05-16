@@ -23,14 +23,6 @@ void LCD_SendData (uint8_t data)
 	systick_wait1ms();
 	DIO_WritePort(LCD_CTRL_PORT, E, STD_LOW);
 	systick_wait1ms();
-	
-/*
- LCD_CTRL_PORT = 0x01;  // setting Rs = 1 and Rw =0 
- LCD_CTRL_PORT |= 0x04; // assert enable 
- LCD_DATA_PORT = data;
- delay_ms(100);
- LCD_CTRL_PORT = 0; 
-*/
 }
 
 void LCD_DisplayString (const uint8_t *str)
@@ -58,10 +50,6 @@ void LCD_Init (void)
 	Port_AnalogOrDigital(LCD_CTRL_PORT, RS|RW|E, Digital);
 	Port_AlternateFunction(LCD_DATA_PORT, 0xFF, 0, 0x00);
 	Port_AlternateFunction(LCD_CTRL_PORT, RS|RW|E, 0, 0x00);
-	//GPIO_PORTA_DEN_R |= (RS|RW|E);
-	//GPIO_PORTA_AFSEL_R &= ~(RS|RW|E);
-	//GPIO_PORTB_DEN_R |= 0xFF;
-	//GPIO_PORTB_AFSEL_R &= ~(0xFF);
 	Port_SetPinDirection(LCD_CTRL_PORT,RS,PORT_PIN_OUT);
 	Port_SetPinDirection(LCD_CTRL_PORT,RW,PORT_PIN_OUT);
 	Port_SetPinDirection(LCD_CTRL_PORT,E,PORT_PIN_OUT);

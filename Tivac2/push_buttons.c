@@ -1,4 +1,4 @@
-#include "lcd.h"
+#include "uart.h"
 #include "push_buttons.h"
 void pushButtons_Init (void)
 {
@@ -17,4 +17,16 @@ void pushButtons_Init (void)
 	NVIC_EN0_R |= 0x40000000 ; // EN0 bit 30
 }
 
-
+void GPIOF_Handler(void)
+{
+	if (GPIO_PORTF_RIS_R & 0x01)
+	{
+		UART2_Write(PF0);
+		PORT_InterruptAck(PF0);
+	}
+	else if(GPIO_PORTF_RIS_R & 0x10)
+	{
+		UART2_Write(PF4);
+		PORT_InterruptAck(PF4);
+	}
+}

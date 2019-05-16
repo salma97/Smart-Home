@@ -10,6 +10,6 @@
 #define GENA 0x00000033		//33
 #define PWMnEnable 0x00000040
 
-void PWM1_3_Init ();
+void PWM1_3_Init (void);
 
 #endif
